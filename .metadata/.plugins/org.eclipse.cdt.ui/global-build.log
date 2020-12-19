@@ -1,0 +1,20 @@
+15:24:55 **** Incremental Build of configuration Debug for project STM32_HelloWorld ****
+make -j6 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+D:\Katradhu Kai Man Alavu\Embedded Programming\RTOS\Free RTOS Course\Exercise_Code\STM32_HelloWorld\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/StdPeriph_Driver/inc" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/Config" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/Third-Party/FreeRTOS/org/Source/include" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/Third-Party/FreeRTOS/org/Source/portable/GCC/ARM_CM4F" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/inc" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/CMSIS/device" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: STM32_HelloWorld.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32_HelloWorld.elf" @"objects.list"   -lm
+Finished building target: STM32_HelloWorld.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32_HelloWorld.elf" "STM32_HelloWorld.bin"
+arm-none-eabi-size "STM32_HelloWorld.elf"
+   text	   data	    bss	    dec	    hex	filename
+  14572	   1232	  78572	  94376	  170a8	STM32_HelloWorld.elf
+ 
