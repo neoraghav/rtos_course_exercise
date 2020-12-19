@@ -74,7 +74,7 @@ int main(void)
 				"TASK-2",
 				configMINIMAL_STACK_SIZE,
 				NULL,
-				2,
+				1,
 				&xTaskHandle2
 				);
 
@@ -91,9 +91,9 @@ void vTask1_handler(void* arg)
 		{
 			UART_ACCESS_KEY = NOT_AVAILABLE;
 			printmsg("********* Entering Task-1 *********\r\n");
-			vTaskDelay(2000);
-			printmsg("********* Leaving Task-1 *********\r\n");
 			UART_ACCESS_KEY = AVAILABLE;
+			vTaskDelay(100);
+			printmsg("********* Leaving Task-1 *********\r\n");
 			taskYIELD();
 		}
 	}
@@ -107,10 +107,10 @@ void vTask2_handler(void* arg)
 		{
 			UART_ACCESS_KEY = NOT_AVAILABLE;
 			printmsg("********* Entering Task-2 *********\r\n");
-			vTaskDelay(2000);
-			printmsg("********* Leaving Task-2 *********\r\n");
 			UART_ACCESS_KEY = AVAILABLE;
 			taskYIELD();
+			vTaskDelay(100);
+			printmsg("********* Leaving Task-2 *********\r\n");
 		}
 	}
 }

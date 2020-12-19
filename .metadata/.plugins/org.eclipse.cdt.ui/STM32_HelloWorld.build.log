@@ -1,23 +1,45 @@
-15:24:55 **** Incremental Build of configuration Debug for project STM32_HelloWorld ****
-make -j6 all 
-Building file: ../src/main.c
-Invoking: MCU GCC Compiler
-D:\Katradhu Kai Man Alavu\Embedded Programming\RTOS\Free RTOS Course\Exercise_Code\STM32_HelloWorld\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/StdPeriph_Driver/inc" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/Config" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/Third-Party/FreeRTOS/org/Source/include" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/Third-Party/FreeRTOS/org/Source/portable/GCC/ARM_CM4F" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/inc" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/CMSIS/device" -I"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: STM32_HelloWorld.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/Katradhu Kai Man Alavu/Embedded Programming/RTOS/Free RTOS Course/Exercise_Code/STM32_HelloWorld/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32_HelloWorld.elf" @"objects.list"   -lm
-Finished building target: STM32_HelloWorld.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "STM32_HelloWorld.elf" "STM32_HelloWorld.bin"
-arm-none-eabi-size "STM32_HelloWorld.elf"
-   text	   data	    bss	    dec	    hex	filename
-  14572	   1232	  78572	  94376	  170a8	STM32_HelloWorld.elf
- 
+15:44:22 **** Programming project STM32_HelloWorld on chip ****
+"C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.externaltools.openocd.win32_1.23.0.201904120827\\tools\\openocd\\bin\\openocd.exe" -f stm32.flash.5417659982453646558.cfg -s "D:\\Katradhu Kai Man Alavu\\Embedded Programming\\RTOS\\Free RTOS Course\\Exercise_Code\\STM32_HelloWorld" -s "C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.debug_2.5.0.201904120827\\resources\\openocd\\st_scripts" -c "program Debug/STM32_HelloWorld.elf verify reset " -c shutdown 
+Open On-Chip Debugger 0.10.0+dev-00021-g524e8c8 (2019-04-12-08:48)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 8000 kHz
+adapter_nsrst_delay: 100
+Info : clock speed 8000 kHz
+Info : STLINK v2.1 JTAG v36 API v2 M26 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.245759
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+Info : Stlink adapter speed set to 4000 kHz
+Info : STM32F446RETx.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Listening on port 3333 for gdb connections
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080036f0 msp: 0x20020000
+configuring PLL
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+Info : Stlink adapter speed set to 4000 kHz
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+adapter speed: 4000 kHz
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10006421
+Info : flash size = 512kbytes
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20020000
+wrote 16384 bytes from file Debug/STM32_HelloWorld.elf in 0.637214s (25.109 KiB/s)
+** Programming Finished **
+** Verify Started **
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20020000
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20020000
+verified 16136 bytes in 0.189213s (83.281 KiB/s)
+** Verified OK **
+** Resetting Target **
+shutdown command invoked
 
-15:24:56 Build Finished (took 1s.672ms)
+15:44:23 Build Finished (took 1s.97ms)
 
